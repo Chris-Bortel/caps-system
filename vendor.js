@@ -21,7 +21,7 @@ setInterval(() => {
 events.on('delivered', thankYou);
 
 function thankYou(payload) {
-  console.log('Thank you', payload);
+  console.log('Thank you');
 }
 // TODO: this will go after the driver.js
 // Monitor the system for events …
