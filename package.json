@@ -1,0 +1,28 @@
+{
+  "name": "caps-system",
+  "version": "1.0.0",
+  "description": "A Node.js real-time ecommerce service that shows status of orders",
+  "main": "caps.js",
+  "scripts": {
+    "test": "jest --verbose --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chris-Bortel/caps-system.git"
+  },
+  "keywords": [
+    "node.js",
+    "faker.js"
+  ],
+  "author": "Chris Bortel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chris-Bortel/caps-system/issues"
+  },
+  "homepage": "https://github.com/Chris-Bortel/caps-system#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "faker": "^5.1.0",
+    "uuid": "^8.3.0"
+  }
+}

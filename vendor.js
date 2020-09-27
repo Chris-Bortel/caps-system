@@ -1,16 +1,29 @@
 'use strict';
 
-// Vendor Module
+const faker = require('faker');
+const uuid = require('uuid').v4;
 
-// Declare your store name (perhaps in a .env file, so that this module is re-usable)
-// Every 5 seconds, simulate a new customer order
+require('dotenv').config();
+const storeName = process.env.STORENAME;
 
-// Create a fake order, as an object:
-// // storeName, orderId, customerName, address
+const events = require('./events.js');
 
-// // Emit a ‘pickup’ event and attach the fake order as payload
-// // // HINT: Have some fun by using the faker library to make up phony information
+setInterval(() => {
+  let payload = {
+    store: storeName,
+    orderID: uuid(),
+    customer: faker.name.firstName.latName,
+    address: faker.address.streetAddress,
+  };
+  events.emit('pickup', payload);
+}, 5000);
 
+events.on('delivered', thankYou);
+
+function thankYou(payload) {
+  console.log('Thank you', payload);
+}
+// TODO: this will go after the driver.js
 // Monitor the system for events …
-// // Whenever the ‘delivered’ event occurs
-// // // Log “thank you” to the console
+// Whenever the ‘delivered’ event occurs
+// Log “thank you” to the console
