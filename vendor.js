@@ -1,7 +1,6 @@
 'use strict';
 
 const faker = require('faker');
-const uuid = require('uuid').v4;
 
 require('dotenv').config();
 const storeName = process.env.STORENAME;
@@ -11,19 +10,15 @@ const events = require('./events.js');
 setInterval(() => {
   let payload = {
     store: storeName,
-    orderID: uuid(),
-    customer: faker.name.firstName.latName,
-    address: faker.address.streetAddress,
+    orderID: faker.random.uuid(),
+    customer: faker.name.findName(),
+    address: faker.address.streetAddress(),
   };
   events.emit('pickup', payload);
 }, 5000);
 
-events.on('delivered', thankYou);
+events.on('in-transit', pickedUp);
 
-function thankYou(payload) {
-  console.log('Thank you');
+function pickedUp(payload) {
+  console.log('    -VENDOR: Let me know when it has arrived', payload);
 }
-// TODO: this will go after the driver.js
-// Monitor the system for events …
-// Whenever the ‘delivered’ event occurs
-// Log “thank you” to the console

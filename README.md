@@ -11,9 +11,15 @@
 - [back-end server url](http://xyz.com) (when applicable)
 - [front-end application](http://xyz.com) (when applicable) -->
 
+### What I learned
+
+you get a maxed callstack when you have more than one emit
+
 ### Note to Developer
 
 - There seems to be a call stack issue, the thank you is being logged before the orderReady and inTransit functions
+
+- I think that I will need to make if statements
 
 ### Setup
 

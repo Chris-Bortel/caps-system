@@ -8,7 +8,10 @@ const events = require('./events.js');
 require('./vendor.js');
 require('./driver.js');
 
-// build a function
+events.on('pickup', logger);
+events.on('in-transit', logger);
 
-// Logs every event to the console with a timestamp and the event payload
-// i.e. “EVENT {}”
+function logger(payload) {
+  console.log('=============================');
+  console.log('CSPS', payload);
+}
