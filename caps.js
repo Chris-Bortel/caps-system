@@ -12,6 +12,6 @@ events.on('pickup', logger);
 events.on('in-transit', logger);
 
 function logger(payload) {
-  console.log('=============================');
-  console.log('CSPS', payload);
+  console.log('=========================================');
+  console.log('CAPS', payload);
 }

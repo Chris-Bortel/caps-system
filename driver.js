@@ -6,7 +6,7 @@ events.on('pickup', inTransit);
 
 function inTransit(payload) {
   setTimeout(() => {
-    console.log('    -DRIVER: picked up', payload);
+    console.log('    -DRIVER: picked up order:', payload);
     events.emit('in-transit', payload.orderID);
   }, 1000);
 }
