@@ -20,7 +20,7 @@ setInterval(() => {
 events.on('in-transit', pickedUp);
 
 function pickedUp(payload) {
-  console.log('    -VENDOR: Let me know when it has arrived', payload);
+  console.log('VENDOR: Let me know when it has arrived', payload);
 }
 
 // When delivery event happens, log 'thank you' to the console

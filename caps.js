@@ -14,6 +14,11 @@ events.on('delivered', logger);
 
 function logger(payload) {
   console.log('=========================================');
-  console.log('fuck', payload);
+  let state = {
+    event: 'picked up or something',
+    time: 8,
+    payload: payload,
+  };
+  console.log('STATE', state);
   console.log('EVENT', payload);
 }
