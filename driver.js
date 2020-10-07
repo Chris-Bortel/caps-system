@@ -14,7 +14,7 @@ function inTransit(payload) {
 events.on('in-transit', deliveredPackage);
 function deliveredPackage(payload) {
   setTimeout(() => {
-    console.log('DRIVER: Delivered order:', payload);
+    console.log('DRIVER: Delivered order:', payload.orderID);
     events.emit('delivered', payload);
   }, 3000);
 }

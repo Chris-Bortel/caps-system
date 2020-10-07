@@ -22,7 +22,9 @@ events.on('delivered', thankYou);
 
 function thankYou(payload) {
   console.log('VENDOR: Thank you for delivering', payload.orderID);
-  events.emit('delivered');
+  // console.log(payload);
+
+  // events.emit('delivered');
 }
 
 // When delivery event happens, log 'thank you' to the console
