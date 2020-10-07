@@ -17,10 +17,12 @@ setInterval(() => {
   events.emit('pickup', payload);
 }, 5000);
 
-events.on('in-transit', pickedUp);
+// events.on('in-transit', pickedUp);
+events.on('delivered', thankYou);
 
-function pickedUp(payload) {
-  console.log('VENDOR: Let me know when it has arrived', payload);
+function thankYou(payload) {
+  console.log('VENDOR: Thank you for delivering', payload.orderID);
+  events.emit('delivered');
 }
 
 // When delivery event happens, log 'thank you' to the console

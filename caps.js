@@ -8,15 +8,23 @@ const events = require('./events.js');
 require('./vendor.js');
 require('./driver.js');
 
-events.on('pickup', logger);
-events.on('in-transit', logger);
-events.on('delivered', logger);
+events.on('pickup', (payload) => {
+  logger('pickup', payload);
+});
 
-function logger(payload) {
+events.on('in-transit', (payload) => {
+  logger('in-transit', payload);
+});
+
+events.on('delivered', (payload) => {
+  logger('delivered', payload);
+});
+
+function logger(event, payload) {
   console.log('=========================================');
   let timeStamp = Date();
   let state = {
-    event: 'pickup',
+    event: event,
     time: timeStamp,
     payload: payload,
   };

@@ -11,10 +11,10 @@ function inTransit(payload) {
   }, 1000);
 }
 
-events.on('delivered', delivered);
-function delivered(payload) {
+events.on('in-transit', deliveredPackage);
+function deliveredPackage(payload) {
   setTimeout(() => {
     console.log('DRIVER: Delivered order:', payload);
-    events.emit('delivered', payload.orderID);
+    events.emit('delivered', payload);
   }, 3000);
 }
