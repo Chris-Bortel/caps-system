@@ -14,11 +14,12 @@ events.on('delivered', logger);
 
 function logger(payload) {
   console.log('=========================================');
+  let timeStamp = Date();
   let state = {
-    event: 'picked up or something',
-    time: 8,
+    event: 'pickup',
+    time: timeStamp,
     payload: payload,
   };
-  console.log('STATE', state);
-  console.log('EVENT', payload);
+  // console.log('STATE', state);
+  console.log('EVENT', state);
 }
