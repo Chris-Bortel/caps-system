@@ -1,10 +1,7 @@
 'use strict';
 
-// Main Hub Application
-// Manages the state of every package (ready for pickup, in transit, delivered, etc)
 const events = require('./events.js');
 
-// function log()
 require('./vendor.js');
 require('./driver.js');
 
@@ -18,10 +15,10 @@ events.on('in-transit', (payload) => {
 
 events.on('delivered', (payload) => {
   logger('delivered', payload);
+  end();
 });
 
 function logger(event, payload) {
-  console.log('=========================================');
   let timeStamp = Date();
   let state = {
     event: event,
@@ -30,4 +27,12 @@ function logger(event, payload) {
   };
   // console.log('STATE', state);
   console.log('EVENT', state);
+}
+
+function end() {
+  console.log(' ');
+  console.log(
+    '=================================================================='
+  );
+  console.log(' ');
 }

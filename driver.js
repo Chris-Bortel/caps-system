@@ -1,5 +1,5 @@
 'use strict';
-// listeners need to be here for events
+
 const events = require('./events.js');
 
 events.on('pickup', inTransit);
@@ -12,6 +12,7 @@ function inTransit(payload) {
 }
 
 events.on('in-transit', deliveredPackage);
+
 function deliveredPackage(payload) {
   setTimeout(() => {
     console.log('DRIVER: Delivered order:', payload.orderID);
