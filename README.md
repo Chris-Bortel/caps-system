@@ -1,4 +1,6 @@
-# LAB - Class 11
+# LAB - Class 18
+
+[Instructions](https://codefellows.github.io/code-401-javascript-guide/curriculum/class-18/lab/)
 
 ## Project: auth-server
 
@@ -13,7 +15,7 @@
 
 ### What I learned
 
-you get a maxed callstack when you have more than one emit
+you get a maxed call stack when you have more than one emit
 
 ### Note to Developer
 

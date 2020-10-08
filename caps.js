@@ -2,6 +2,14 @@
 
 const events = require('./events.js');
 
+const port = process.env.PORT || 3000;
+
+const io = require('socket.io')(port);
+
+io.on('connection', (socket) => {
+  console.log('CONNECTED', socket.id);
+});
+
 require('./vendor.js');
 require('./driver.js');
 
