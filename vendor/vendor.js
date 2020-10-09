@@ -12,7 +12,7 @@ const capsConnection = io.connect(`${host}/caps-system`);
 
 const storeName = process.env.STORENAME;
 
-// const events = require('./events.js');
+// TODO: Do I need a .on()   ?
 capsConnection.emit('join', storeName);
 setInterval(() => {
   let payload = {
@@ -25,7 +25,12 @@ setInterval(() => {
   capsConnection.emit('pickup', payload);
 }, 5000);
 
+capsConnection.on('in-transit', inTransit);
 capsConnection.on('delivered', thankYou);
+
+function inTransit(payload) {
+  console.log('package is in transit', payload);
+}
 
 function thankYou(payload) {
   console.log('VENDOR: Thank you for delivering', payload.orderID);
