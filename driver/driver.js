@@ -11,20 +11,21 @@ let host = 'http://localhost:3000';
 
 const capsConnection = io.connect(`${host}/caps-system`);
 
-// events.on('pickup', inTransit);
+// capsConnection.emit('join', 'test room', 'test');
+capsConnection.on('pickup', inTransit);
 
-// function inTransit(payload) {
-//   setTimeout(() => {
-//     console.log('DRIVER: picked up', payload.orderID);
-//     events.emit('in-transit', payload);
-//   }, 1000);
-// }
+function inTransit(payload) {
+  setTimeout(() => {
+    console.log('DRIVER: picked up', payload.orderID);
+    capsConnection.emit('in-transit', payload);
+  }, 1000);
+}
 
-// events.on('in-transit', deliveredPackage);
+capsConnection.on('in-transit', deliveredPackage);
 
-// function deliveredPackage(payload) {
-//   setTimeout(() => {
-//     console.log('DRIVER: Delivered order:', payload.orderID);
-//     events.emit('delivered', payload);
-//   }, 3000);
-// }
+function deliveredPackage(payload) {
+  setTimeout(() => {
+    console.log('DRIVER: Delivered order:', payload.orderID);
+    capsConnection.emit('delivered', payload);
+  }, 3000);
+}

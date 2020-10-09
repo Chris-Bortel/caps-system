@@ -4,9 +4,15 @@ const faker = require('faker');
 
 require('dotenv').config();
 
+const io = require('socket.io-client');
+
+let host = 'http://localhost:3000';
+
+const capsConnection = io.connect(`${host}/caps-system`);
+
 const storeName = process.env.STORENAME;
 
-const events = require('./events.js');
+// const events = require('./events.js');
 
 setInterval(() => {
   let payload = {
@@ -16,10 +22,10 @@ setInterval(() => {
     address: faker.address.streetAddress(),
   };
 
-  events.emit('pickup', payload);
+  capsConnection.emit('pickup', payload);
 }, 5000);
 
-events.on('delivered', thankYou);
+capsConnection.on('delivered', thankYou);
 
 function thankYou(payload) {
   console.log('VENDOR: Thank you for delivering', payload.orderID);
