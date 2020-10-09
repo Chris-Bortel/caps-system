@@ -13,7 +13,7 @@ const capsConnection = io.connect(`${host}/caps-system`);
 const storeName = process.env.STORENAME;
 
 // const events = require('./events.js');
-
+capsConnection.emit('join', storeName);
 setInterval(() => {
   let payload = {
     store: storeName,
