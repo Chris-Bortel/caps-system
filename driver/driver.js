@@ -10,15 +10,17 @@ let host = 'http://localhost:3000';
 // console.log(host);
 
 const capsConnection = io.connect(`${host}/caps-system`);
-
+const storeName = process.env.STORENAME;
 // capsConnection.emit('join', 'test room', 'test');
 capsConnection.on('pickup', inTransit);
 
+// Emitting to a specific room is where I am stuck.
 function inTransit(payload) {
   setTimeout(() => {
     console.log('DRIVER: picked up', payload.orderID);
-    console.log('test', capsConnection.socket);
-    // capsConnection.to(process.env.STORENAME).emit('in-transit', payload);
+    console.log('test', capsConnection.sockets);
+    // TODO: capsConnection.socket is not working for the .to() method. Need to figure out how to target the socket
+    capsConnection.to(storeName).emit('in-transit', payload);
   }, 1000);
 }
 

@@ -34,6 +34,7 @@ caps.on('connection', (socket) => {
       end();
     });
   });
+  // return socket;
 });
 
 function logger(event, payload) {
