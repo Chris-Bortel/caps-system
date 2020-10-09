@@ -17,7 +17,8 @@ capsConnection.on('pickup', inTransit);
 function inTransit(payload) {
   setTimeout(() => {
     console.log('DRIVER: picked up', payload.orderID);
-    capsConnection.emit('in-transit', payload);
+    console.log('test', capsConnection.socket);
+    // capsConnection.to(process.env.STORENAME).emit('in-transit', payload);
   }, 1000);
 }
 

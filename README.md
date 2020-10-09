@@ -8,7 +8,8 @@
 
 ### Links and Resources
 
-- [class-16 pull request](https://github.com/Chris-Bortel-401-advanced-javascript/caps-system/pull/1)
+- [class-16 pull request](https://github.com/Chris-Bortel/caps-system/pull/1)
+- [class-18 pull request](https://github.com/Chris-Bortel/caps-system/pull/2)
 <!-- - [ci/cd](http://xyz.com) (GitHub Actions)
 - [back-end server url](http://xyz.com) (when applicable)
 - [front-end application](http://xyz.com) (when applicable) -->

@@ -14,20 +14,23 @@ io.on('connection', (socket) => {
 const caps = io.of('/caps-system');
 caps.on('connection', (socket) => {
   console.log('caps is connected');
+
+  socket.on('pickup', (payload) => {
+    logger('pickup', payload);
+    socket.broadcast.emit('pickup', payload);
+  });
+
   socket.on('join', (room) => {
     console.log('Join room', room);
 
-    socket.on('pickup', (payload) => {
-      logger('pickup', payload);
-      socket.broadcast.emit('pickup', payload);
-    });
-
     socket.on('in-transit', (payload) => {
       logger('in-transit', payload);
+      // socket.emit('in-transit', payload);
     });
 
     socket.on('delivered', (payload) => {
       logger('delivered', payload);
+      // socket.emit('delivered', payload);
       end();
     });
   });
