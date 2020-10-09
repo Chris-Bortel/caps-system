@@ -1,15 +1,15 @@
 'use strict';
 
-require('dotenv').config();
+// require('dotenv').config();
 
 const io = require('socket.io-client');
 // const events = require('./events.js');
 
 let host = 'http://localhost:3000';
 // let host = process.env.PORT;
-console.log(host);
+// console.log(host);
 
-const capsConnection = io.connect(host);
+const capsConnection = io.connect(`${host}/caps-system`);
 
 // events.on('pickup', inTransit);
 

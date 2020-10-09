@@ -1,0 +1,24 @@
+{
+  "name": "caps-hub",
+  "version": "1.0.0",
+  "description": "CAPS app hub",
+  "main": "caps.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chris-Bortel/caps-system.git"
+  },
+  "author": "Chris Bortel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chris-Bortel/caps-system/issues"
+  },
+  "homepage": "https://github.com/Chris-Bortel/caps-system#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.1"
+  }
+}

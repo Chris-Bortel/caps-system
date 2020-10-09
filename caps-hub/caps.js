@@ -11,6 +11,11 @@ io.on('connection', (socket) => {
   console.log('CONNECTED', socket.id);
 });
 
+const caps = io.of('/caps-system');
+caps.on('connection', (socket) => {
+  console.log('caps is connected');
+});
+
 // require('./vendor.js');
 // require('./driver.js');
 
