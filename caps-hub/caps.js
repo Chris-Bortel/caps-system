@@ -1,7 +1,5 @@
 'use strict';
 
-// const events = require('./events.js');
-
 require('dotenv').config();
 const port = process.env.PORT || 3000;
 console.log(port);
@@ -22,18 +20,6 @@ caps.on('connection', (socket) => {
       socket.join(room);
     }
 
-    // socket.on('in-transit', (payload) => {
-    //   logger('in-transit', payload);
-    //   // socket.emit('in-transit', payload);
-    // });
-
-    // socket.on('delivered', (payload) => {
-    //   logger('delivered', payload);
-    //   // socket.emit('delivered', payload);
-    //   end();
-    // });
-  });
-
   socket.on('pickup', (payload) => {
     logger('pickup', payload);
     socket.broadcast.emit('pickup', payload);
@@ -49,7 +35,6 @@ caps.on('connection', (socket) => {
     caps.to(process.env.STORENAME).emit('delivered', payload);
   });
 
-  // return socket;
 });
 
 function logger(event, payload) {
@@ -59,7 +44,6 @@ function logger(event, payload) {
     time: timeStamp,
     payload: payload,
   };
-  // console.log('STATE', state);
   console.log('EVENT', state);
 }
 

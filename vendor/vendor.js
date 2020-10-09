@@ -12,7 +12,6 @@ const capsConnection = io.connect(`${host}/caps-system`);
 
 const storeName = process.env.STORENAME;
 
-// TODO: Do I need a .on()   ?
 capsConnection.emit('join', storeName);
 setInterval(() => {
   let payload = {
