@@ -10,19 +10,21 @@ const capsConnection = io.connect(`${host}/caps-system`);
 capsConnection.on('pickup', inTransit);
 
 // Emitting to a specific room is where I am stuck.
-async function inTransit(payload) {
-  await setTimeout(() => {
+function inTransit(payload) {
+  pickUp(payload);
+  delivered(payload);
+}
+
+function pickUp(payload) {
+  setTimeout(() => {
     console.log('DRIVER: picked up', payload.orderID);
     capsConnection.emit('in-transit', payload);
   }, 1000);
-  deliveredPackage(payload);
 }
 
-function deliveredPackage(payload) {
+function delivered(payload) {
   setTimeout(() => {
     console.log('DRIVER: Delivered order:', payload.orderID);
     capsConnection.emit('delivered', payload);
-  }, 3000);
+  }, 1000);
 }
-
-// bringing in the socket connection as capsConnection may not be pinging back to the caps.js

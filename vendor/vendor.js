@@ -8,7 +8,7 @@ const io = require('socket.io-client');
 
 let host = 'http://localhost:3000';
 
-const capsConnection = io.connect(`${host}/caps-system`);
+const capsConnection = io.connect(`${host}/caps-system`); // this is the plug/client that is listening to the caps system. PRIVATE ROOM is created
 
 const storeName = process.env.STORENAME;
 
