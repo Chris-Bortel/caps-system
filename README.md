@@ -1,4 +1,6 @@
-# LAB - Class 11
+# LAB - Class 18
+
+[Instructions](https://codefellows.github.io/code-401-javascript-guide/curriculum/class-18/lab/)
 
 ## Project: auth-server
 
@@ -6,14 +8,15 @@
 
 ### Links and Resources
 
-- [class-16 pull request](https://github.com/Chris-Bortel-401-advanced-javascript/caps-system/pull/1)
+- [class-16 pull request](https://github.com/Chris-Bortel/caps-system/pull/1)
+- [class-18 pull request](https://github.com/Chris-Bortel/caps-system/pull/2)
 <!-- - [ci/cd](http://xyz.com) (GitHub Actions)
 - [back-end server url](http://xyz.com) (when applicable)
 - [front-end application](http://xyz.com) (when applicable) -->
 
 ### What I learned
 
-you get a maxed callstack when you have more than one emit
+you get a maxed call stack when you have more than one emit
 
 ### Note to Developer
 

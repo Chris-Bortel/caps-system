@@ -1,20 +1,16 @@
 {
-  "name": "caps-system",
+  "name": "driver",
   "version": "1.0.0",
-  "description": "A Node.js real-time ecommerce service that shows status of orders",
-  "main": "caps.js",
+  "description": "",
+  "main": "driver.js",
   "scripts": {
-    "test": "jest --verbose --coverage"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Chris-Bortel/caps-system.git"
   },
-  "keywords": [
-    "node.js",
-    "faker.js"
-  ],
-  "author": "Chris Bortel",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Chris-Bortel/caps-system/issues"
@@ -22,9 +18,7 @@
   "homepage": "https://github.com/Chris-Bortel/caps-system#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "faker": "^5.1.0",
     "socket.io": "^2.3.0",
-    "socket.io-client": "^2.3.1",
-    "uuid": "^8.3.0"
+    "socket.io-client": "^2.3.1"
   }
 }
